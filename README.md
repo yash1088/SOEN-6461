@@ -2,7 +2,7 @@ TVM(Ticket Vending Machine) System
 
 Team M
 
-Team Members of (Team M) 
+Team Members:
 1. Yash Patel
 2. Umang Patel
 3. Yashvi Pithadia
