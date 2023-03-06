@@ -7,7 +7,7 @@
 3. Yashvi Pithadia
 4. Yash Radadiya
 5. Wei Qi
-6. Raj Ramesh
+6. Raj Kumar
 
 **Roles And Responsibilities:-**
 
