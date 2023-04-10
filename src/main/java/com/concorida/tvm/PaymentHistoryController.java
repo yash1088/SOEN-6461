@@ -38,6 +38,7 @@ public class PaymentHistoryController {
 
     public void initialize() {
         fetchDataInBackground();
+
     }
     private void fetchDataInBackground() {
         Thread fetchDataThread = new Thread(() -> {
@@ -74,7 +75,6 @@ public class PaymentHistoryController {
                 return null;
             }
         });
-
         amountColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, Double>,
                 ObservableValue<Double>>() {
             public ObservableValue<Double> call(TableColumn.CellDataFeatures<Object, Double> cellData) {
@@ -91,7 +91,6 @@ public class PaymentHistoryController {
                 return null;
             }
         });
-
         metroCardColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, String>,
                 ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Object, String> cellData) {
@@ -108,7 +107,6 @@ public class PaymentHistoryController {
                 return null;
             }
         });
-
         phoneNumberColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, String>,
                 ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Object, String> cellData) {
@@ -125,7 +123,6 @@ public class PaymentHistoryController {
                 return null;
             }
         });
-
         paidDateColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, String>,
                 ObservableValue<String>>() {
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Object, String> cellData) {

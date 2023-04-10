@@ -16,8 +16,11 @@ import org.dom4j.DocumentException;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -134,9 +137,9 @@ public class SubwayCardRechargeController {
             MetroCard metroCard = new MetroCard();
             cashPayment.setAmount(Double.parseDouble(rechargeAmount));
             cashPayment.setPaymentMethod("Cash");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-            LocalDate localDate = LocalDate.now();
-            cashPayment.setPaidDate(localDate.format(formatter));
+            Date dNow = new Date( );
+            SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+            cashPayment.setPaidDate(ft.format(dNow));
             metroCard.setBindingPhoneNumber("4388888888");
             metroCard.setMetroCardId("123456");
             cashPayment.setMetroCard(metroCard);
@@ -146,9 +149,9 @@ public class SubwayCardRechargeController {
             MetroCard metroCard = new MetroCard();
             creditCardPayment.setAmount(Double.parseDouble(rechargeAmount));
             creditCardPayment.setPaymentMethod("Credit");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-            LocalDate localDate = LocalDate.now();
-            creditCardPayment.setPaidDate(localDate.format(formatter));
+            Date dNow = new Date( );
+            SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+            creditCardPayment.setPaidDate(ft.format(dNow));
             metroCard.setBindingPhoneNumber("4388888888");
             metroCard.setMetroCardId("123456");
             creditCardPayment.setMetroCard(metroCard);
@@ -158,9 +161,9 @@ public class SubwayCardRechargeController {
             MetroCard metroCard = new MetroCard();
             debitCardPayment.setAmount(Double.parseDouble(rechargeAmount));
             debitCardPayment.setPaymentMethod("Credit");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-            LocalDate localDate = LocalDate.now();
-            debitCardPayment.setPaidDate(localDate.format(formatter));
+            Date dNow = new Date( );
+            SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+            debitCardPayment.setPaidDate(ft.format(dNow));
             metroCard.setBindingPhoneNumber("4388888888");
             metroCard.setMetroCardId("123456");
             debitCardPayment.setMetroCard(metroCard);
@@ -170,9 +173,9 @@ public class SubwayCardRechargeController {
             MetroCard metroCard = new MetroCard();
             mobilePayment.setAmount(Double.parseDouble(rechargeAmount));
             mobilePayment.setPaymentMethod("Credit");
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-            LocalDate localDate = LocalDate.now();
-            mobilePayment.setPaidDate(localDate.format(formatter));
+            Date dNow = new Date( );
+            SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
+            mobilePayment.setPaidDate(ft.format(dNow));
             metroCard.setBindingPhoneNumber("4388888888");
             metroCard.setMetroCardId("123456");
             mobilePayment.setMetroCard(metroCard);

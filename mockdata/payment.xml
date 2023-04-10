@@ -1,32 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PaymentInfo>
-
-<Payment id="1">
-    <PaymentMethod>Cash</PaymentMethod>
-    <Amount>20.0</Amount>
-    <MetroCardNumber>123456</MetroCardNumber>
-    <PhoneNumber>4388888888</PhoneNumber>
-    <PaidDate>2023/04/10</PaidDate>
-</Payment>
-<Payment id="2">
-    <PaymentMethod>Credit</PaymentMethod>
-    <Amount>50.0</Amount>
-    <MetroCardNumber>123456</MetroCardNumber>
-    <PhoneNumber>4388888888</PhoneNumber>
-    <PaidDate>2023/04/10</PaidDate>
-</Payment>
-<Payment id="3">
-    <PaymentMethod>Credit</PaymentMethod>
-    <Amount>100.0</Amount>
-    <MetroCardNumber>123456</MetroCardNumber>
-    <PhoneNumber>4388888888</PhoneNumber>
-    <PaidDate>2023/04/10</PaidDate>
-</Payment>
-<Payment id="4">
-    <PaymentMethod>Credit</PaymentMethod>
-    <Amount>200.0</Amount>
-    <MetroCardNumber>123456</MetroCardNumber>
-    <PhoneNumber>4388888888</PhoneNumber>
-    <PaidDate>2023/04/10</PaidDate>
-</Payment>
-</PaymentInfo>
+<Payment id="1"><PaymentMethod>Cash</PaymentMethod><Amount>20.0</Amount><MetroCardNumber>123456</MetroCardNumber><PhoneNumber>4388888888</PhoneNumber><PaidDate>2023-04-10 04:01:37</PaidDate></Payment><Payment id="2"><PaymentMethod>Credit</PaymentMethod><Amount>50.0</Amount><MetroCardNumber>123456</MetroCardNumber><PhoneNumber>4388888888</PhoneNumber><PaidDate>2023-04-10 04:01:46</PaidDate></Payment><Payment id="3"><PaymentMethod>Credit</PaymentMethod><Amount>50.0</Amount><MetroCardNumber>123456</MetroCardNumber><PhoneNumber>4388888888</PhoneNumber><PaidDate>2023-04-10 04:01:50</PaidDate></Payment><Payment id="4"><PaymentMethod>Credit</PaymentMethod><Amount>100.0</Amount><MetroCardNumber>123456</MetroCardNumber><PhoneNumber>4388888888</PhoneNumber><PaidDate>2023-04-10 04:01:54</PaidDate></Payment><Payment id="5"><PaymentMethod>Credit</PaymentMethod><Amount>200.0</Amount><MetroCardNumber>123456</MetroCardNumber><PhoneNumber>4388888888</PhoneNumber><PaidDate>2023-04-10 04:01:57</PaidDate></Payment></PaymentInfo>
