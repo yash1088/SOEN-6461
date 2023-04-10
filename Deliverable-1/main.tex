@@ -1,0 +1,427 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+% Required package
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{algorithm}
+\usepackage[table]{xcolor}
+\usepackage{algpseudocode}
+\usepackage{tabularx}
+\begin{document}
+\begin{titlepage}
+   \begin{center}
+       \vspace*{-8ex}
+        \begin{figure}[h!]
+  \centering
+\end{figure}
+
+       \textbf{\large PROJECT REPORT }\\[0.3in]
+        \textbf{\large iGO} \\ [0.3in]
+        \textbf{\large Prepared By} \\[0.5in]
+        \normal Umang Patel(40218418)\\[0.1in]
+        \normal Yash Patel(40202674)\\[0.1in]
+        \normal Yashvi Pithadia(40193738)\\[0.1in]
+        \normal Wei Qi(40198872)\\[0.1in]
+        \normal Yash Radadiya(40198043)\\[0.1in]
+        \normal Raj Kumar(40225218)\\[0.5in]
+
+        \textbf{\large Under the Guidance of}\\[0.15in]
+        \normal Prof. Pankaj Kamthan\\[0.4in]
+
+        \textbf{\large Submitted to}\\[0.15in]
+        \normal CONCORDIA UNIVERSITY\\\\[0.05in]
+        \normal DEPARTMENT OF COMPUTER SCIENCE AND SOFTWARE ENGINEERING\\[0.2in]
+        \includegraphics{concordialogo.png}
+
+       \vspace{1.0cm}
+      
+        \textbf{Github:}\\\url{https://github.com/yash1088/SOEN-6461}\\[0.2in]
+         \normal By
+        \normal Team M
+       \vfill
+      % \vspace{0.2cm}
+   \end{center}
+\end{titlepage}
+
+\tableofcontents
+\chapter{Introduction}
+
+There are many types of TVMs available across the globe like Beverage TVM, movie ticket TVM, and transit TVM. The vending machine is defined as a machine that provides a desired service when money/debit/credit cards are inserted. We are going to use Subway (Metro) Ticket vending machine for this project. People In Montreal are using the TVMs provided by the STM(Société de transport de Montréal). Primary tasks of that include recharging the cards provided by the STM and dispensing appropriate tickets/fare passes to users. We have selected this type of TVM because of its flexibility and user interface. It allows users to collect specific types of transit fares based on their requirements. To illustrates, there are many transit fares available like day pass, morning\ evening pass, and weekend pass. Another flexibility of this TVM is its language, it is available in two primary languages in Canada English and French. This TVM accepts fare charges by credit\ debit card or via cash and has good security for transactions and will provide the appropriate receipt to the user. These documents also provide an understanding of iGo. It focuses on the features expressed by stakeholders that they would like to see in the application.\\ [0.1in]
+
+\section{Description of iGO}
+The iGo TVM (Ticket Vending Machine) is an automated, self-service vending machine designed specifically for the subway public transportation system in Canada. It has been constructed in strict adherence to all applicable municipal, provincial, and/or federal laws and regulations, with a particular emphasis on compliance with accessibility, language, weights and measures, and data security laws. The iGo TVM is equipped with several accessibility features, which facilitate ease of use for all users, including those with disabilities. The user interface of the iGo TVM is thoughtfully designed to be intuitive and user-friendly, enabling seamless navigation and ease of use. The system is compatible with several payment methods, such as cash, credit and debit cards, and mobile payments, to ensure compatibility with the most current payment technologies and trends, including digital wallets and contactless payments. The multilingual support of the iGo TVM is comprehensive, with a broad range of language options that are compliant with language laws and regulations, including French and English. Additionally, the software is optimized for performance, with quick response times to user input, minimal load times, and reduced lag. Furthermore, the iGo TVM includes several security features, such as encryption, authentication, and secure payment processing, that protect user data and prevent fraudulent activity. Generally, the iGo TVM is an exemplary solution for ticketing needs in subway public transportation, providing a positive user experience through user research. The system is a reliable, user-friendly, and secure solution for purchasing subway tickets in Canada, and is designed to meet the needs and expectations of a diverse range of users.
+
+\section{Assumptions}
+The project has the following assumptions:
+\begin{enumerate}
+\item The project design will give utmost consideration to the user needs of subway public transportation in Canada.
+\item Multiple payment methods, including cash, and credit/debit cards will be integrated into the project.
+\item Compliance with relevant municipal, provincial, and/or federal laws and regulations in Canada, including accessibility, language, weights and measures, and data security, will be ensured in the project.
+\item The project will prioritize user-friendliness and accessibility for a diverse range of users.
+\item Compatibility with existing subway public transportation and technologies, such as ticket validation machines and fare collection systems, will be a key aspect of the project.
+\item The project will support multilingual interfaces that align with language laws and regulations in Canada.
+
+\end{enumerate}
+
+\section{Constraints}
+\begin{enumerate}
+\item \textbf{Budgetary considerations:} The financial resources available for designing, developing, and implementing the iGo TVM may be limited, imposing budgetary constraints that need to be taken into account when making design and functionality decisions.
+
+\item \textbf{Timeline constraints:} The timeline for designing, developing, and implementing the iGo TVM may be restricted, imposing temporal constraints that must be considered when making decisions about the TVM's design and functionality.
+
+\item \textbf{Regulatory requirements:} The iGo TVM must comply with all relevant municipal, provincial, and/or federal laws and regulations in Canada. Compliance with accessibility, language, weights, and measures, and data security laws and regulations may impose regulatory constraints that impact the design and functionality of the TVM.
+
+\item \textbf{Technical limitations:} The technical limitations of the equipment, software, or hardware used to develop and implement the iGo TVM may be a constraint. The TVM must be designed to work within the technical limitations of the available technology.
+
+\item \textbf{Compatibility considerations:} The compatibility of the iGo TVM with existing systems and technologies used in subway systems, such as ticket validation machines or fare collection systems, may impose compatibility constraints that must be addressed in the TVM's design and functionality.
+
+\item \textbf{Multilingual support requirements:} The need to comply with language laws and regulations may impose constraints on the design and functionality of the iGo TVM's multilingual support, requiring it to support a range of languages, including French and English, while complying with language laws and regulations.
+
+\end{enumerate}
+
+
+\chapter {Domain Model for iGO}
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=180mm,height=150mm,scale=0.5]{Domain.png}
+  \caption{Domain Model for iGO}
+\end{figure}
+
+\item A problem domain model is a conceptual representation of the real-world setting in which a software system is meant to function. It describes the entities, concepts, and connections pertinent to the issue the software system is trying to address.
+\item At the analysis stage of software development, when the focus is on comprehending the problem that needs to be solved and the specifications for the solution, a problem domain model is often constructed. Depending on the approach being used, the model can have a variety of shapes, but it frequently consists of textual descriptions of the domain ideas and connections together with diagrams, such as entity-relationship diagrams.
+\item A problem domain model's goal is to assist software developers in comprehending the industry they are working in and in determining the specifications for the software system. It can also assist in locating future issues and prospects for development in the industry.
+
+\item The iGo System has a domain model that consists of multiple entities and relationships:\\
+
+\item \textbf{Entities:}
+
+\begin{itemize}
+\item \textbf{iGo System:} The overall systems include the location of the station, language to select from the user, Registered users, and payment.
+\item \textbf{User:} User contains the name, email address, home address, and card id.
+\item \textbf{iGo Card:} UThis entity contains the id and validity of the card that users have.
+\item \textbf{Payment:} This Entity contains the different types of payment methods it accepts and the different ways to generate the receipt.
+\end{itemize}
+
+
+\item \textbf{Relationships:}
+
+\begin{itemize}
+\item \textbf{iGo System:} contains location and language: The system includes the location of the system and the language that are used by the user to interact with the user.
+\item \textbf{Generalization of the user:} User can be categorized as a student, senior citizen, and Regular User.
+\item \textbf{User Interact with System:} users interact with the system using a reloading card or by purchasing the tickets.
+\item \textbf{Bank accepts the payment:} payment made by the user to purchase the ticket and reload the card is accepted by the Bank and generates either email receipts or physical receipts.
+\item \textbf{Generalization of payment method:} User can make payment either from cash, credit card, or debit card.
+\end{itemize}
+
+\chapter{Interviews}
+\section{Mind Map for interview process}
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=150mm,height=150mm,scale=0.8]{Mindmap.jpg}
+  \caption{Mind map for interview process}
+\end{figure}
+
+\section{Interviews}
+Interviews are the most common way to collect data about any software`s requirements and we can get to know what users actually want in the software based on their previous good or bad experiences.\\
+In this project, we have conducted several interviews with not only students but different age groups of people and backgrounds. We have conducted these interviews via different mediums such as google forms, audio, and in-person.\\\\
+
+\section{Sample Interview Questions}
+\begin{enumerate}
+    \item How often do you travel by public transport?
+    \item What kind of improvement would you like to bring to in the existing system??
+    \item Would you like to have an email receipt of your payments for recharging or purchasing tickets?
+    \item What kind of ticket do you usually purchase?
+    \item Have you ever encountered a TVM software transaction process that was too lengthy or complex?
+    \item Have you encountered any issues in the past where the TVM software was not \item compatible with a payment method that you wanted to use?
+    \item Have you ever found the button layout in TVM software confusing or difficult to use?
+    
+\end{enumerate}
+
+\section{Conclusions of Interview}
+The following conclusions were obtained based on the interviews:
+
+\begin{enumerate}
+    \item All of the interviewees mentioned that they would prefer having an online application instead of using TVM machines as it is more time-saving and convenient.
+    \item There have been cases where the TVM does not work as expected or is confusing to use. Having an online application with an improved UI could solve such problems. 
+    \item Most interviewees agreed that getting an email receipt is better than a paper receipt as it is easier to manage and track. 
+    \item It was also noted that most interviewees suggested having a TVM at places other than metro stations so that it is more accessible and can avoid long waiting times. 
+\end{enumerate}
+\chapter{Use case model}
+
+Use cases show the overall functionality of the system from the user’s perspective. It shows the interaction between users and system features and how they relate to one another. In essence, It helps to identify different users, understand system requirements, determine the scope of the system, and provide a basis for future development of the system.\\
+\begin{enumerate}
+    \item Purchase Ticket
+        \begin{itemize}
+            \item Name: Purchase Ticket
+            \item Actors: Commuter
+            \item Description: A commuter provides specific details of the ticket, selects the ticket, pays the amount, and receives the printed ticket through the system.
+        \end{itemize}
+        \item Recharge Card
+        \begin{itemize}
+            \item Name: Recharge Card
+            \item Actors: Commuter
+            \item Description: A user selects the suitable option from the given multiple choices to recharge the card, make a payment by credit/debit card or cash, and received the receipt of the card recharge.
+        \end{itemize}
+        \item Routine Maintenance
+        \begin{itemize}
+            \item Name: Routine Maintenance
+            \item Actors: Maintenance Staff 
+            \item Description: As a part of routine maintenance member refills the ink and papers to print tickets, deposits the cash, withdraws the collected cash, and provides summary reports to officials.
+        \end{itemize}
+        
+        \item Authorise payment
+        \begin{itemize}
+            \item Name: Authorise payment
+            \item Actors: Bank
+            \item Description: Bank is responsible for authorization of the user’s credit or debit card payment request. After a successful transaction, the system prints the receipt of the payment and dispenses the ticket.
+        \end{itemize}
+        
+        \item Configure System Setting
+        \begin{itemize}
+            \item Name: Configure System Setting
+            \item Actors: Administrator
+            \item Description: The administrator can configure the system setting for multiple objectives such as updating the price of tickets, adding some new routes, deleting discontinued routes, etc.
+
+            
+        \end{itemize}
+        
+        \item Repair Machine
+
+        \begin{itemize}
+            \item Name: Repair Machine
+            \item Actors: Technician
+            \item Description: The technician installs the system in real-time, updates the software of the system, and solved the system problems by replacing the faulty parts.
+        \end{itemize}
+        
+\end{enumerate}
+\newpage
+\section{Use Case Diagram}
+\begin{figure}[h!]
+  \centering
+   \includegraphics[width=180mm,height=190mm,scale=0.5]{Usecase.png}
+  \caption{Use Case Model}
+\end{figure}
+\chapter{Activity Diagram for iGO}
+ \begin{figure}[h!]
+   \centering
+   \includegraphics[width=150mm,height=150mm,scale=0.5]{Activity2-4.jpg}
+   \caption{Activity Diagram}
+ \end{figure}
+
+ \begin{figure}[h!]
+   \centering
+    \includegraphics[width=150mm,height=200mm,scale=0.5]{Activity3-3.jpg}
+   \caption{Activity Diagram}
+ \end{figure}
+ \begin{figure}[h!]
+   \centering
+    \includegraphics[width=150mm,height=200mm,scale=0.5]{TVM Activity Diagram.png}
+   \caption{Activity Diagram}
+ \end{figure}
+
+ \begin{figure}[h!]
+   \centering
+    \includegraphics[width=150mm,height=200mm,scale=0.5]{LastUMLActivityForLife.jpg}
+   \caption{Activity Diagram}
+ \end{figure}
+
+   \begin{figure}[h!]
+   \centering
+    \includegraphics[width=200mm,height=230mm,scale=0.5]{Activity (1).jpg}
+   \caption{Activity Diagram}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+   \centering
+    \includegraphics[width=150mm,height=150mm,scale=0.5]{PaymentActivity diagram.drawio.png}
+   \caption{Payment Activity Diagram}
+ \end{figure}
+\chapter{References}
+\begin{enumerate}
+  \item \url{http://www.stm.info/en}
+   \item \url{https://app.diagrams.net/}
+  \item PANKAJ KAMTHAN (2023) “Introduction To Domain Modeling
+   \item PANKAJ KAMTHAN (2023) “Brainstorming and Mind-Mapping"
+   \item PANKAJ KAMTHAN (2023) “Introduction to Interviews”
+   \item PANKAJ KAMTHAN (2023) “Introduction To Use Case Modeling”
+   
+   \item \url{https://livebook.manning.com/book/functional-and-reactive-domain-modeling/chapter-1/9}
+   \item \url{https://hbr.org/1964/01/strategies-of-effective-interviewing}
+   \item \url{https://nulab.com/learn/software-development/uml-diagrams-guide/}
+   \bibliographystyle{plain}
+   \bibliography{citation}
+   \cite{sabou2018verifying}
+   \cite{6164775}
+   \cite{wood1997semi}
+   \cite{mackinnon2003designing}
+
+   
+  % \item PANKAJ KAMTHAN (2023) “Understanding Context"
+  % \item PANKAJ KAMTHAN (2023) “Introduction to Interviews”
+  % \item PANKAJ KAMTHAN (2023) “Introduction To Domain Modeling” - Section 14, 15 ,16.
+  % \item PANKAJ KAMTHAN (2023) “Introduction To Use Case Modeling” - Section 11, 12.
+  % \item PANKAJ KAMTHAN (2023) “Negative Use Case Modeling”  - Section 8
+  % \item \url{https://www.lucidchart.com/pages/uml-activity-diagram}
+  % \item Carte OPUS. To obtain your photo OPUS card. 2023. \url{http://www.carteopus.info/}.
+  % \item Google form which we used for interviews - \href{https://docs.google.com/forms/d/12D6sXLjWFCtpH7vW8L07wA6l39XUuOzsR9XzgtdqhwM/edit}{Google Form Link} 
+\end{enumerate}
+\chapter{Appendix}
+% \textbf{\LARGE{Interview Recordings (Drive Link):}}\\\\
+% \url{https://drive.google.com/drive/folders/1Yacj_tL098LSFhWG8j1h0X6ZFnottpPd?usp=share_link}\\\\
+\textbf{\LARGE{Interview Questions}}\\\\
+\section{Interview-1}
+Date – 22-02-2023, 7:30 PM\\
+\textbf{Interviewer:} Yashvi Pithadia\\
+\textbf{Interviewee:} Denis Barrette \\\\
+\textbf{Interviewer:}How often do you travel by public transport? (Often, rarely, very rarely)?\\
+\textbf{Interviewee:} Often\\\\
+\textbf{Interviewer:}What kind of improvement would you like to bring to the existing system??\\
+\textbf{Interviewee:} There is always a long queue at the TVMs and it is very time-consuming. This should be improved.\\\\
+\textbf{Interviewer:}  Do you want STM to install TVMs to be located other than the metro station?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Would you like to prefer having online mechanisms for recharging cards?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:} Would you like to have an email receipt of your payments for recharging or purchasing tickets? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Which method of payment do you prefer? (Card / Cash / Apple-Google Pay)\\
+\textbf{Interviewee:} Cash\\\\
+\textbf{Interviewer:} What kind of ticket do you usually purchase? (Daily / Weekly /  Monthly / One way / Two way) \\
+\textbf{Interviewee:} Daily\\\\
+\textbf{Interviewer:} Have you ever found the instructions provided
+in TVM unclear or confusing? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever encountered a TVM software transaction process that was too lengthy or complex? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you encountered errors while using TVMs before? (Yes / No) If yes, How clear were the error messages and how helpful was the information provided?\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you encountered any issues in the past where the TVM software was not compatible with a payment method that you wanted to use? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you used TVMs in the past that were slow or unresponsive? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you ever encountered a TVM menu that was particularly difficult to navigate? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you ever found the button layout in TVM software confusing or difficult to use? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever found the language used in TVM too technical or difficult to understand? (Yes / No) \\
+\textbf{Interviewee:} Yes\\\\
+
+
+
+
+
+\section{Interview-2}
+Date – 25-02-2023, 9:30 PM\\
+\textbf{Interviewer:} Umang Patel\\
+\textbf{Interviewee:} Maria Howarth \\\\
+\textbf{Interviewer:}How often do you travel by public transport? (Often, rarely, very rarely)?\\
+\textbf{Interviewee:} Often\\\\
+\textbf{Interviewer:}What kind of improvement would you like to bring to the existing system??\\
+\textbf{Interviewee:} There should be a way to automatically recharge the monthly pass every month.\\\\
+\textbf{Interviewer:}  Do you want STM to install TVMs to be located other than the metro station?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Would you like to prefer having online mechanisms for recharging cards?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:} Would you like to have an email receipt of your payments for recharging or purchasing tickets? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Which method of payment do you prefer? (Card / Cash / Apple-Google Pay)\\
+\textbf{Interviewee:} Card\\\\
+\textbf{Interviewer:} What kind of ticket do you usually purchase? (Daily / Weekly /  Monthly / One way / Two way) \\
+\textbf{Interviewee:} Monthly \\\\
+\textbf{Interviewer:} Have you ever found the instructions provided
+in TVM unclear or confusing? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever encountered a TVM software transaction process that was too lengthy or complex? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you encountered errors while using TVMs before? (Yes / No) If yes, How clear were the error messages and how helpful was the information provided?\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you encountered any issues in the past where the TVM software was not compatible with a payment method that you wanted to use? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you used TVMs in the past that were slow or unresponsive? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you ever encountered a TVM menu that was particularly difficult to navigate? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you ever found the button layout in TVM software confusing or difficult to use? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever found the language used in TVM too technical or difficult to understand? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+
+\section{Interview-3}
+Date – 26-02-2023, 3:30 PM\\
+\textbf{Interviewer:} Yash Radadiya\\
+\textbf{Interviewee:} Sharad Narola \\\\
+\textbf{Interviewer:}How often do you travel by public transport? (Often, rarely, very rarely)?\\
+\textbf{Interviewee:} Very\\\\
+\textbf{Interviewer:}What kind of improvement would you like to bring in the existing system??\\
+\textbf{Interviewee:} There are many TVMS available in metro stations, they are efficient for the public but on the peak times especially means on the 1st day of every month it`s not efficient to serve a large number of people as everyone has to recharge their cards. Consequentially there was a long queue in the metro station and people are getting late for their work. So, this is the area where I want improvements.\\\\
+\textbf{Interviewer:}  Do you want STM to install TVMs to be located other than the metro station?? (Yes / No)\\
+\textbf{Interviewee:} Yes I want STM to install TVMs in different parts of the city as at present they are only available in the metro stations so people have to go to the metro station to recharge their cards but imagine that if people are living far from metro stations and they are using bus transit for daily usage than it would be better than TVMs are also available at bus stations.\\\\
+\textbf{Interviewer:}  Would you like to prefer having online mechanisms for recharging cards?? (Yes / No)\\
+\textbf{Interviewee:} Yes it would be great if they will adopt the option of recharging cards online as it will save a lot of time in public and they do not have to be in long queues for recharging their cards.\\\\
+\textbf{Interviewer:} Would you like to have an email receipt of your payments for recharging or purchasing tickets? (Yes / No)\\
+\textbf{Interviewee:} Yes, I would like to have an email receipt rather than a paper-based receipt, as it`s better to keep a record and to handle their expense. Another reason is that email receipts are safe compared to paper receipts, as many people just garbage their receipts and afterward if they need them they can`t able to find them.\\\\
+\textbf{Interviewer:}  Which method of payment do you prefer? (Card / Cash / Apple-Google Pay)\\
+\textbf{Interviewee:} Card\\\\
+\textbf{Interviewer:} What kind of ticket do you usually purchase? (Daily / Weekly /  Monthly / One way / Two way) \\
+\textbf{Interviewee:} I am purchasing a monthly ticket as I am doing a part-time job and don`t have a car so it`s better to have a monthly pass and it is cheap. \\\\
+\textbf{Interviewer:} Have you ever found the instructions provided
+in TVM unclear or confusing? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever encountered a TVM software transaction process that was too lengthy or complex? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you encountered errors while using TVMs before? (Yes / No) If yes, How clear were the error messages and how helpful was the information provided?\\
+\textbf{Interviewee:} Yes, the message regarding the error was clear.\\\\
+\textbf{Interviewer:}  Have you encountered any issues in the past where the TVM software was not compatible with a payment method that you wanted to use? (Yes / No)\\
+\textbf{Interviewee:} Yes, once my credit card was not accepted by the machine.\\\\
+\textbf{Interviewer:}  Have you used TVMs in the past that were slow or unresponsive? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you ever encountered a TVM menu that was particularly difficult to navigate? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you ever found the button layout in TVM software confusing or difficult to use? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever found the language used in TVM too technical or difficult to understand? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+
+\section{Interview-4}
+Date – 23-02-2023, 12:20 PM\\
+\textbf{Interviewer:} Yash Patel\\
+\textbf{Interviewee:} Smith Edwards \\\\
+\textbf{Interviewer:}How often do you travel by public transport? (Often, rarely, very rarely)?\\
+\textbf{Interviewee:} Often\\\\
+\textbf{Interviewer:}What kind of improvement would you like to bring to the existing system??\\
+\textbf{Interviewee:} There should be a way to automatically recharge the monthly pass every month.\\\\
+\textbf{Interviewer:} Do you want STM to install TVMs to be located other than the metro station?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Would you like to prefer having online mechanisms for recharging cards?? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:} Would you like to have an email receipt of your payments for recharging or purchasing tickets? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Which method of payment do you prefer? (Card / Cash / Apple-Google Pay)\\
+\textbf{Interviewee:} Card\\\\
+\textbf{Interviewer:} What kind of ticket do you usually purchase? (Daily / Weekly /  Monthly / One way / Two way) \\
+\textbf{Interviewee:} Monthly \\\\
+\textbf{Interviewer:} Have you ever found the instructions provided
+in TVM unclear or confusing? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever encountered a TVM software transaction process that was too lengthy or complex? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you encountered errors while using TVMs before? (Yes / No) If yes, How clear were the error messages and how helpful was the information provided?\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you encountered any issues in the past where the TVM software was not compatible with a payment method that you wanted to use? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you used TVMs in the past that were slow or unresponsive? (Yes / No)\\
+\textbf{Interviewee:} Yes\\\\
+\textbf{Interviewer:}  Have you ever encountered a TVM menu that was particularly difficult to navigate? (Yes / No)\\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:}  Have you ever found the button layout in TVM software confusing or difficult to use? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+\textbf{Interviewer:} Have you ever found the language used in TVM too technical or difficult to understand? (Yes / No) \\
+\textbf{Interviewee:} No\\\\
+ 
+\end{document}
+\end{document}
