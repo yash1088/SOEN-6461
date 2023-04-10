@@ -160,7 +160,7 @@ public class SubwayCardRechargeController {
             DebitCardPayment debitCardPayment = new DebitCardPayment();
             MetroCard metroCard = new MetroCard();
             debitCardPayment.setAmount(Double.parseDouble(rechargeAmount));
-            debitCardPayment.setPaymentMethod("Credit");
+            debitCardPayment.setPaymentMethod("Debit");
             Date dNow = new Date( );
             SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
             debitCardPayment.setPaidDate(ft.format(dNow));
@@ -172,7 +172,7 @@ public class SubwayCardRechargeController {
             MobilePayment mobilePayment = new MobilePayment();
             MetroCard metroCard = new MetroCard();
             mobilePayment.setAmount(Double.parseDouble(rechargeAmount));
-            mobilePayment.setPaymentMethod("Credit");
+            mobilePayment.setPaymentMethod("Mobile");
             Date dNow = new Date( );
             SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm:ss");
             mobilePayment.setPaidDate(ft.format(dNow));

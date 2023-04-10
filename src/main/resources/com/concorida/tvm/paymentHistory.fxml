@@ -6,9 +6,10 @@
 <AnchorPane fx:id="rootPane"
             fx:controller="com.concorida.tvm.PaymentHistoryController"
             xmlns:fx="http://javafx.com/fxml">
-    <TableView fx:id="propertyTableView" prefWidth="450">
+    <TableView fx:id="propertyTableView" prefWidth="500">
         <columns>
             <TableColumn text="PaymentID" fx:id="idColumn" style="-fx-alignment: center;"/>
+            <TableColumn text="PaymentMethod" fx:id="methodColumn" style="-fx-alignment: center;"/>
             <TableColumn text="Amount" fx:id="amountColumn" style="-fx-alignment: center"/>
             <TableColumn text="MetroCardNumber" fx:id="metroCardColumn" style="-fx-alignment: center"/>
             <TableColumn text="PhoneNumber" fx:id="phoneNumberColumn" style="-fx-alignment: center"/>

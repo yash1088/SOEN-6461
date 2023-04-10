@@ -18,7 +18,7 @@ import java.util.List;
 public class PaymentDaoImpl implements PaymentDao {
     public static Document paymentDocument;
     PaymentFactory creditCardPaymentFactory = new CreditCardPaymentFactory();
-    PaymentFactory debittCardPaymentFactory = new DebittCardPaymentFactory();
+    PaymentFactory debittCardPaymentFactory = new DebitCardPaymentFactory();
     PaymentFactory mobilePaymentFactory = new MobilePaymentFactory();
     PaymentFactory cashPaymentFactory = new CashPaymentFactory();
     public void loadMockData(String fileName) throws DocumentException {
@@ -198,7 +198,7 @@ public class PaymentDaoImpl implements PaymentDao {
                 }
             }
             if ("123456".equalsIgnoreCase(metroCard.getMetroCardId())
-                    && "Debit".equalsIgnoreCase(mobilePayment.getPaymentMethod())){
+                    && "Mobile".equalsIgnoreCase(mobilePayment.getPaymentMethod())){
                 mobilePayment.setMetroCard(metroCard);
                 mobilePaymentList.add(mobilePayment);
             }

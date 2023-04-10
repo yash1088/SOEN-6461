@@ -33,6 +33,8 @@ public class PaymentHistoryController {
     private TableColumn<Object, String> phoneNumberColumn;
     @FXML
     private TableColumn<Object, String> paidDateColumn;
+    @FXML
+    private TableColumn<Object, String> methodColumn;
 
     private ObservableList<Object> paymentList;
 
@@ -71,6 +73,22 @@ public class PaymentHistoryController {
                     return new ReadOnlyObjectWrapper<String>(((MobilePayment) payment).getPaymentId());
                 }else if (payment instanceof CashPayment) {
                     return new ReadOnlyObjectWrapper<String>(((CashPayment) payment).getPaymentId());
+                }
+                return null;
+            }
+        });
+        methodColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Object, String>,
+                ObservableValue<String>>() {
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Object, String> cellData) {
+                Object payment = cellData.getValue();
+                if (payment instanceof CreditCardPayment) {
+                    return new ReadOnlyObjectWrapper<String>(((CreditCardPayment) payment).getPaymentMethod());
+                } else if (payment instanceof DebitCardPayment) {
+                    return new ReadOnlyObjectWrapper<String>(((DebitCardPayment) payment).getPaymentMethod());
+                } else if (payment instanceof MobilePayment) {
+                    return new ReadOnlyObjectWrapper<String>(((MobilePayment) payment).getPaymentMethod());
+                }else if (payment instanceof CashPayment) {
+                    return new ReadOnlyObjectWrapper<String>(((CashPayment) payment).getPaymentMethod());
                 }
                 return null;
             }
